@@ -8,6 +8,7 @@ interface IContext {
   fetchCountries: () => void;
   loading: boolean;
   sortByDirection: () => void;
+  sortingDirectionASC: boolean
 }
 
 interface IProps {
@@ -21,7 +22,7 @@ export const useCountriesContext = () => useContext(CountriesContext);
 export const CountriesContextProvider: FC<IProps> = ({ children }) => {
   const [countries, setCountries] = useState<ICountries[]>([]);
   const [loading, setLoading] = useState(false);
-  const [sortingDirection, setSortingDirection] = useState(true);
+  const [sortingDirectionASC, setSortingDirectionASC] = useState(true);
 
   const fetchCountries = () => {
     setLoading(true);
@@ -33,19 +34,23 @@ export const CountriesContextProvider: FC<IProps> = ({ children }) => {
   };
 
   const sortByDirection = () => {
-    setLoading(true);
-    axios.get(`${environment.API.COUNTRIES_URL}v2/all?fields=name,region,area`)
-      .then((data) => setCountries(data.data))
-      .finally(() => {
-        setLoading(false);
-      });
+      
+    // const sortedCountries = countries.sort((a: any,b:any) => {
+    //     if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+    //     if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+    //     return 0;
+    // });
+ 
+    setCountries(countries.reverse());
+    setSortingDirectionASC(!sortingDirectionASC)
   };
 
   const value = {
     countries,
     fetchCountries,
     loading,
-    sortByDirection
+    sortByDirection,
+    sortingDirectionASC
   };
 
   return (
