@@ -1,0 +1,15 @@
+.sortBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: aquamarine;
+    border: none;
+}
+
+.arrowIcon {
+    width: 12px;
+    padding: 0 4px;
+    transform: rotate(90deg);
+}

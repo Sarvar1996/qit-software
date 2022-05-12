@@ -1,18 +1,29 @@
 import React, { useEffect } from 'react';
 import { useCountriesContext } from '../../contexts/countries.context';
+import { Card } from '../cards/Cards';
+import logo from '../../../assets/arrow.svg'
+import './Main.css'
 
 
 export const Main = () => {
-    const { countries, fetchCountries, loading } = useCountriesContext();
+  const { fetchCountries, loading, sortByDirection } = useCountriesContext();
 
-    useEffect(() => {
-      fetchCountries();
-    }, [fetchCountries])
-  
-    console.log(countries)
+  useEffect(() => {
+     fetchCountries();
+  },[])
+
+  if (loading) {
+    return (
+      <a href="/" aria-busy="true">Loading countries, please wait…</a>
+    );
+  }
+
   return (
     <section>
-      <h1>test</h1>
+      <button className='sortBtn' onClick={sortByDirection}>
+          Sorting by:  <img src={logo} className='arrowIcon'/>
+      </button>
+      <Card />
     </section>
   )
 };
