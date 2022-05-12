@@ -19,3 +19,19 @@
     padding: 0 4px;
     transform: rotate(270deg);
 }
+
+.sortPanel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.filtersPanel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.selectRegion{
+    width: 200px;
+    margin: 0 10px;
+}

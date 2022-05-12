@@ -4,4 +4,12 @@ export interface ICountries {
     area: number;
     independent?: boolean;
   }
+  export interface IRegion {
+    value: string;
+    label: string;
+  } 
+  export interface IArea {
+    value: number;
+    label: string;
+  }
   
