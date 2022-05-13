@@ -3,6 +3,7 @@ import { useCountriesContext } from '../../contexts/countries.context';
 import { Cards } from '../cards/Cards';
 import logo from '../../../assets/arrow.svg';
 import Select from 'react-select';
+import { Pagination } from '../pagination/Pagination';
 
 import './Main.css'
 
@@ -17,7 +18,17 @@ const options = [
 ]
 
 export const Main = () => {
-    const { countries, allCountries, fetchCountries, loading, sortByDirection, sortingDirectionASC, filterByRegion, filterByArea } = useCountriesContext();
+    const { 
+        countries, 
+        allCountries, 
+        fetchCountries, 
+        loading, 
+        sortByDirection, 
+        sortingDirectionASC, 
+        filterByRegion, 
+        filterByArea,
+        regions
+     } = useCountriesContext();
 
     const  countriesOption = allCountries.map((country) => {return {
         value:country.area,
@@ -39,14 +50,6 @@ export const Main = () => {
   }
 
   const arrowDirection = sortingDirectionASC ? 'arrowIconUp' : 'arrowIconDown';
-/**
-* !   Dont forget to make options dynamic
-* const regions = countries.map(country => {
-*       regionsList.indexOf(country.region) === -1 && regionsList.push(country.region);
-*      return regionsList
-*  })
-*  console.log(regions)
-*/
 
 const onChange = (selectedOptions: any) => filterByRegion(selectedOptions);
 
@@ -61,7 +64,7 @@ const onChangeArea = (selectedOptions: any) => filterByArea(selectedOptions);
           <div className='filtersPanel'>
             <Select 
                 placeholder={'Select region'} 
-                options={options} 
+                options={regions} 
                 className='selectRegion' 
                 onChange={onChange} />
             <Select 
@@ -72,6 +75,7 @@ const onChangeArea = (selectedOptions: any) => filterByArea(selectedOptions);
           </div>
         </div>
       <Cards />
+      <Pagination />
     </section>
   )
 };
