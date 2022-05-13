@@ -55,7 +55,7 @@ export const CountriesContextProvider: FC<IProps> = ({ children }) => {
   }, [countries])
 
   const sortByDirection = () => {
-    chunkedCountries(chunkedList[currentPage - 1].reverse());
+    chunkedCountries(allCountries.reverse());
     setSortingDirectionASC(!sortingDirectionASC)
   };
 
