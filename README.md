@@ -1,3 +1,16 @@
+# Countries List 
+[![N|Solid](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.eaie.org%2Fblog%2Fhigher-education-in-small-countries.html&psig=AOvVaw2vtLQYkOPnVFJn4ZvVkg-o&ust=1652516165911000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOi-w8yE3PcCFQAAAAAdAAAAABAD)](https://github.com/Sarvar1996/qit-software)
+##### The platform is implemented using following tech stacks:
+
+  - ReactJS (ContextAPI)
+  - React-Select
+  - RestCountries API
+# Features
+
+  - Listing countries
+  - Sorting by descending or acsending order
+  - Filtering by area of countries
+  - Filtering by regions
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
