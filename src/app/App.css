@@ -1,5 +1,6 @@
 .App {
-  background-color: rgb(254,252,253);
+  background-color: rgb(248,250,251);
   margin: 0 10%;
   padding: 50px;
+  box-shadow: 0px 4px 8px 1px rgba(34, 60, 80, 0.2);
 }

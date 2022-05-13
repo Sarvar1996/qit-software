@@ -22,6 +22,7 @@ export const Main = () => {
 
   useEffect(() => {
      fetchCountries();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   if (loading) {
