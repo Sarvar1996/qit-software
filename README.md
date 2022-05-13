@@ -1,5 +1,5 @@
 # Countries List 
-[![N|Solid](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.eaie.org%2Fblog%2Fhigher-education-in-small-countries.html&psig=AOvVaw2vtLQYkOPnVFJn4ZvVkg-o&ust=1652516165911000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOi-w8yE3PcCFQAAAAAdAAAAABAD)](https://github.com/Sarvar1996/qit-software)
+[![N|Solid](https://www.eaie.org/.imaging/mte/eaie-theme/width-820-not-expanding/dam/images/blog-images/2014/2014-09-16-(2).jpg/jcr:content/2014-09-16%20(2).jpg)](https://github.com/Sarvar1996/qit-software)
 ##### The platform is implemented using following tech stacks:
 
   - ReactJS (ContextAPI)
