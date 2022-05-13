@@ -29,8 +29,8 @@ export const useCountriesContext = () => useContext(CountriesContext);
 export const CountriesContextProvider: FC<IProps> = ({ children }) => {
   const [countries, setCountries] = useState<ICountries[]>([]);
   const [allCountries, setAllCountries] = useState<ICountries[]>([]);
-  const [regions, setRegions] = useState<any[]>([]);
-  const [chunkedList, setChunked] = useState<any[]>([]);
+  const [regions, setRegions] = useState<any[]>([]); //*! Dont forget about type
+  const [chunkedList, setChunked] = useState<any[]>([]); //*! Dont forget about type
   const [loading, setLoading] = useState(false);
   const [sortingDirectionASC, setSortingDirectionASC] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +51,7 @@ export const CountriesContextProvider: FC<IProps> = ({ children }) => {
   useEffect(()=>{
     const localRegions = new Set(allCountries.map(country => country.region));
     const regionsAsOptions = Array.from(localRegions).map(region => {return {value: region, label: region}});
-    setRegions(regionsAsOptions)
+    setRegions([{value: 'All', label: 'All'},...regionsAsOptions])
   }, [countries])
 
   const sortByDirection = () => {
